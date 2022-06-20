@@ -1,0 +1,61 @@
+
+Q/Write a script to add new user to a specific group (Exist and new 
+group) and give an initial password to this account. All this info will 
+be reading from the user.
+
+
+A/
+
+
+nano project3
+
+#inside project3 file write this code
+
+#! /bin/bash
+Echo –n "enter user name: "
+Read name
+Echo –n " enter user password: "
+Read –s pass
+Echo –e
+Sudo useradd $name 
+echo -e 
+echo "Now will show you all available groups: "
+groups 
+echo -e 
+echo "Chose an option for changing the group:" 
+echo "1) To Existing group" 
+echo "2) To New group" 
+echo -n "Enter number of option: "
+read op 
+echo –e
+echo -n "Enter number of option: "
+read op 
+echo -e 
+case $op in 
+1 ) 
+echo -n "Enter the name of group: "
+read gro 
+echo -e 
+sudo adduser Sname $gro;; 
+2 ) 
+echo -n "Enter the name of New group: "
+read gr 
+sudo groupadd $gr 
+echo -e 
+sudo adduser $name Sgr;; 
+*)
+echo "Wrong number!!";; 
+esac
+
+
+
+sudo chmod +x project3
+
+./project3
+
+#then enter your name and password
+
+
+sudo cat /etc/group| grep (write the name which you have previously chosen in options)
+
+

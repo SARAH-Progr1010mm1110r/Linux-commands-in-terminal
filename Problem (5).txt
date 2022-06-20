@@ -1,0 +1,52 @@
+
+
+Q/write a Shell Script that read a file name and specific line number from 
+the user as a command line argument then display the count of 
+characters in that line.
+
+
+
+
+A/
+
+nano countchar
+
+
+# inside countcharfile write this code
+
+#! /bin/bash
+filename=$1
+linenumber=$2
+echo -n “The number of characters in line $linenumber from 
+$filename : “
+head -$linenumber $filename | tail +$linenumber | wc -c
+
+
+
+cat text
+
+#type
+(Hi....
+please smile now)#just an example you can write anything you want
+
+
+cat text1
+
+#type
+(I'am SARAH-Programmer (:
+have a good day)#just an example you can write anything you want
+
+
+#Test
+
+
+bash countchar text 2
+
+
+bansh countchar text1 3
+
+
+
+
+
+

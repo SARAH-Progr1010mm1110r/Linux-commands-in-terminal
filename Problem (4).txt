@@ -1,0 +1,95 @@
+
+Q/write an interactive file handling shell program. Let it offer the user 
+the choice of copying, removing or renaming files. Once the user has 
+made a choice, the program will ask the user for necessary 
+information, such as the file name, new name and so on.
+
+
+
+A/
+
+
+nano project
+
+#inside project file write this code
+
+
+#! /bin/bash
+echo "Chose one from these option:" 
+echo "(1) For copy file." 
+echo "(2) For remove file." 
+echo "(3) For rename file." 
+echo " " 
+echo -n "The number of option: "
+read option 
+echo " "
+case $option in 
+1 ) 
+echo -n "Enter a file name to copy its content: " 
+read File 
+echo -n "Enter a file name or location of directory to paste to it: " 
+read copy 
+cp $File $copy 
+echo " "
+echo "-----DONE!!-----" 
+echo " ";;
+2 )
+echo -n "Enter a file name to delete: "
+read File 
+rm $File 
+echo " " 
+echo "-----DONE !! -----" 
+echo " ";; 
+3 ) 
+echo -n "Enter file name to rename: "
+read File 
+echo -n "Enter new name for the file: "
+read New 
+mv $File $New 
+echo " "
+echo "-----DONE !! -----" 
+echo " ";; *)
+echo "Incorrect option!!" 
+echo " ";;
+esac
+
+
+nano FileTest1
+
+nano FileTest2
+
+
+
+cat FileTest1
+
+#type 
+
+(hello!
+how old are you?) #just an example you can write anything you want
+
+
+cat FileTest2
+
+
+
+#type 
+
+(hello!
+what is your name?) #just an example you can write anything you want
+
+
+
+chmod +x project
+
+./project
+
+# you can choose from the options 
+
+
+
+
+
+
+
+
+

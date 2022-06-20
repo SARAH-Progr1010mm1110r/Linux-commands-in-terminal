@@ -1,0 +1,28 @@
+
+Q\Write a shell script to print the count of files and subdirectories in a 
+specified directory, the directory name will be received as a 
+command line argument.
+
+
+
+
+
+A\
+
+
+nano count
+
+#inside count file write this content
+
+#! /bin/bash
+echo -n "The number of files and subdirectories in $1: "
+ls $1 | wc -w
+
+
+bash count myfolder
+
+cd myfolder
+
+ls
+
+cd
